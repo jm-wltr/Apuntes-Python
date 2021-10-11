@@ -1,0 +1,127 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Oct 11 20:25:17 2021
+
+@author: jaimewalter
+"""
+
+# <-- Esto se usa para hacer comentarios, así que lo que estoy escribiendo no lo lee Python
+
+"""
+Así también se pueden
+hacer comentarios más 
+largos en varias líneas.
+"""
+
+
+""" Números """
+
+# Entero (int): no tiene decimales
+uso_el_nombre_que_quiera = 7
+otro_entero = 80
+
+# Número de punto flotante (float): tiene decimales
+numerito = 6.27
+
+otro_numerito = 2.0
+tercer_numerito = 2.
+
+cuarto_numerito = 2 # ¡OJO! Este no es un float, es un int
+quinto_numerito = float(2) #En Python, es posible pasar de una clase de objeto a otra de esta manera. En este caso, quinto_numerito es ahora 2.0
+sexto_numerito = int(2.0) #En este caso, sexto_numerito es 2 (en vez de 2.0)
+
+# Número complejo (complex): NO ES IMPORTANTE - número con parte real y parte imaginaria. La "i" (que es la raiz cuadrada de -1) se escribe "j" en Python.
+complejo = (4+5j)
+
+# Operaciones con números
+3 + 3 # = 6 (suma)
+3 - 3 # = 0 (resta)
+3 * 3 # = 9 (multiplicación)
+3 ** 3 # = 27 (potencia)
+
+3 / 3 # = 1.0 (división. siempre devuelve floats aunque dividas ints)
+7 / 4 # = 1.75
+10 / 3 # 3.3333333333333335 (hay que tener cuidado con los floats porque son muy precisos, pero no son perfectos. véase: https://docs.python.org/3/tutorial/floatingpoint.html)
+
+3 // 3 # = 1 (división entera. este sí puede devolver ints y siempre redondea hacia abajo)
+3. // 3. # = 1.0
+7 // 4 # = 1
+7. // 4. # = 1.0
+10 // 3 # = 3
+10. // 3. # = 3.0
+
+3 % 3 # = 0 (módulo. devuelve el resto de la división)
+3. % 3. # = 0.0
+7 % 4  # = 3
+10 % 3 # = 1
+
+resultado = numerito + quinto_numerito # = 8.27 (podemos realizar operaciones con objetos que ya hemos creado)
+
+
+""" Objetos iterables """
+
+# Lista (list): objeto iterable con varios elementos, que pueden ser de cualquier tipo
+lista = [1, 2, 3, "gato", 5.0] #la lista se define con corchetes []. Nota: "gato" es una cadena, otro tipo de objeto iterable
+
+lista[0] # = 1   podemos acceder a elementos de una lista así. Hay que tener en cuentra que la indexación de Python empieza por 0, así que el primer elemento es el nº 0
+lista[1] # = 2   este es el segundo elemento de la lista
+lista[4] # = 5.0    este es el quinto elemento de la lista
+lista[-1]  # = 5.0   este es el último elemento de la lista, que es el mismo que el quinto, claro
+lista[-2]  # = "gato"  este es el penúltimo elemento de la lista, que es el mismo que el cuarto, claro
+
+lista[1:3]  # = [2, 3]  son los elementos desde el nº1 (el segundo) hasta el número 2 (el 3º)
+lista[0:2] # = [1, 2] son los elementos desde el nº0 (el primero) hasta el nº1 (el segundo)
+lista[:3]  # = [1, 2, 3] son los elementos desde el nº0 (el primero) hasta el nº3 (el cuarto)
+lista[2:] # = [3, 'gato', 5.0]  son los elementos desde el nº2 (el tercero) hasta el último
+
+# Tupla (tuple): NO ES IMPORTANTE - parecido a una lista pero con ligeras diferencias
+tupla = (1, 2, 3, "gato", 5.0) #la tupla se define con paréntesis () o sin nada. Una característica de las tuplas es que no se puede modificar su tamaño. También suelen ser más rápidas que las listas cuanto estamos trabajando con números
+la_misma_tupla = 1, 2, 3, "gato", 5.0
+
+# Conjunto (set): NO ES IMPORTANTE - Es parecido a una lista pero sus elementos están ordenados y no se repiten
+conjunto = {1, 3, 3, 2} #el conjunto se define con corchetes {}.
+el_mismo_conjunto = {1, 2, 3}
+
+# Objeto de rango (range)
+range(10) # contiene todos los números desde el cero hasta el nueve. es importante que todos los argumentos sean int, es decir que range(10.0) no funciona
+range(4,11) #contiene todos los números desde el cuatro hasta el diez
+range(4, 25, 3) #contiene todos los número desde el cuatro hasta el veinticuatro de tres en tres (por lo tanto realmente solo llega hasta el 22)
+
+ranguito = list(range(4,25,3)) #también podemos pasar de una clase de objeto iterable a otra. En este caso ranguito sería la lista [4, 7, 10, 13, 16, 19, 22]
+
+# Cadena / string (str): Secuencia de caracteres.
+saludo = "Hola"
+otro_saludo = 'Hola me llamo Jaime' #Las cadenas se pueden crear con '' o con ""
+numerito_a_cadena = str(numerito) #numerito era 6.27, así que numerito_a_cadena es "6.27"
+
+# Diccionario (dict) - Tiene llaves y sus valores. Las llaves son como las entradas del diccionario y los valores sus definiciones
+diccionario = {"llave 1":"valor de la llave 1", "llave 2" :"valor de la llave 2"}
+real_academia_española = {"agradecer":"dar agradecimientos", "agradecimiento":"acción de agradecer"}
+jaime = {"usuario":"j41m3", "contraseña":"jaime123", "puntos_acumulados":5048}
+
+jaime["contraseña"] # = "jaime123" podemos acceder a un elemento de un diccionario así
+real_academia_española["agradecer"] # = "dar agradecimientos"
+
+
+""" Booleanos (bool). Los booleanos son True y False """
+5 == 5 # Al escribir 5 == 5 estamos preguntando si 5 es igual a 5. No podemos usar = porque ya lo usamos para asignar variables. En este caso 5 == 5 es True
+5 == 6 # False
+(5 == 6) == True # False, porque que cinco sea igual a seis no es verdad
+
+5 != 5 # False. Al escribir 5 != 5 estamos preguntando si 5 es diferente a 5.
+5 != 6 # True
+
+1 < 5 # True, menor que
+1 < 1 # False
+
+1 > 0 # True, mayor que
+1 > 1 # False
+
+1 <= 5 # True, menor o igual que
+1 <= 1 # True
+
+1 >= 0 # True, mayor o igual que
+1 >= 1 # True
+         
+         
