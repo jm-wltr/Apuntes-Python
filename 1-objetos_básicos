@@ -29,7 +29,7 @@ tercer_numerito = 2.
 
 cuarto_numerito = 2 # ¡OJO! Este no es un float, es un int
 quinto_numerito = float(2) #En Python, es posible pasar de una clase de objeto a otra de esta manera. En este caso, quinto_numerito es ahora 2.0
-sexto_numerito = int(2.0) #En este caso, sexto_numerito es 2 (en vez de 2.0)
+sexto_numeritohkfjsdah = int(2.0) #En este caso, sexto_numerito es 2 (en vez de 2.0)
 
 # Número complejo (complex): NO ES IMPORTANTE - número con parte real y parte imaginaria. La "i" (que es la raiz cuadrada de -1) se escribe "j" en Python.
 complejo = (4+5j)
